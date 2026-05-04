@@ -2,13 +2,6 @@
 
 
 void explore(int* ArrayValores, string* ArrayExpresion, int Tamanio, bool* facto) {
-    /*
-    Evitamos tamaños fuera del rango
-    */
-    if (Tamanio <= 0 || Tamanio > 10){
-        return;
-    }
-
     
     /*
     key:
