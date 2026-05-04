@@ -134,13 +134,20 @@ int main() {
         out<<"\n\n\n";
         out<<"Resultados cantidad no posible por combinacion: ";
         out<<"\n\n\n";
-
+        string MejoresCasos[100000];
         int maximo= 0;
         int indexmaximo = 0;
+        int idx_mejores = 0;
+        
         for (int i = 0; i <NElementosNoposibles; i++){
             if (NResultadosNOPosibles[i] >= maximo){
                 indexmaximo = i;
                 maximo = NResultadosNOPosibles[i];
+            }
+            if (NResultadosNOPosibles[i] == 0){
+                
+                MejoresCasos[idx_mejores] = Combinaciones[i];
+                idx_mejores++;
             }
             
             out<<Combinaciones[i]<<": "<<NResultadosNOPosibles[i];
@@ -148,8 +155,12 @@ int main() {
         }
         out<<"La peor combinacion es: "<<Combinaciones[indexmaximo]<<"\n";
         out<<"Errores: "<<NResultadosNOPosibles[indexmaximo]<<"\n";
+        out<<"Las mejores combinaciones ( 0 error) son: \n";
+        for(int i = 0;i < idx_mejores+1;i++){
+            out<<MejoresCasos[i]<<"\n";
+        }
         out.close();
-
+        
         delete [] Procesados; 
         delete [] NResultadosNOPosibles;
         delete [] Combinaciones;
