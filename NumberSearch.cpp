@@ -150,8 +150,9 @@ int main() {
         out<<"Errores: "<<NResultadosNOPosibles[indexmaximo]<<"\n";
         out.close();
 
-        delete [] Procesados;
-
+        delete [] Procesados; 
+        delete [] NResultadosNOPosibles;
+        delete [] Combinaciones;
 
     return 0;
 }
